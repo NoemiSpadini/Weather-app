@@ -33,14 +33,15 @@ function search(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  temperatureElement.innerHTML = celsiusTemperature;
 }
+celsiusTemperature = Math.round(response.data.main.temp);
 
 // Feature #1
 let dateElement = document.querySelector("#date");
