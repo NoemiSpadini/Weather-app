@@ -86,13 +86,19 @@ function getCityLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-// Get data APi -> HTML
+// Get data API -> HTML
 function showWeather(response) {
+  console.log(response.data);
+
   document.querySelector("#city").innerHTML = response.data.name;
+
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+
   document.querySelector("#min").innerHTML = Math.round(
     response.data.main.temp_min
   );
@@ -104,6 +110,13 @@ function showWeather(response) {
   );
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+
+  let descriptionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`
   );
 }
 
