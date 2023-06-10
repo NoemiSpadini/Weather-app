@@ -39,9 +39,9 @@ function convertToFahrenheit(event) {
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusTemperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = celsiusTemperature;
 }
-celsiusTemperature = Math.round(response.data.main.temp);
 
 // Feature #1
 let dateElement = document.querySelector("#date");
@@ -90,6 +90,7 @@ function getCityLocation(event) {
 // Get data API -> HTML
 function showWeather(response) {
   console.log(response.data);
+  celsiusTemperature = Math.round(response.data.main.temp);
 
   document.querySelector("#city").innerHTML = response.data.name;
 
@@ -114,10 +115,10 @@ function showWeather(response) {
   );
 
   let descriptionElement = document.querySelector("#description");
-  let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
