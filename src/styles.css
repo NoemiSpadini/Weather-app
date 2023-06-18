@@ -36,10 +36,10 @@ div.card-body {
   padding-right: 5px;
 }
 
-.col-2 {
+/* .col-2 {
   padding-left: 5px;
   padding-right: 5px;
-}
+} */
 
 #city-input {
   background: #efebf9;
@@ -130,12 +130,24 @@ div.card-body {
 .forecast-container {
   justify-content: space-evenly;
   padding-top: 20px;
-  padding-left: 80px;
   border-top: 1px solid #e2dcf3;
   padding-bottom: 20px;
   border-bottom: 1px solid #e2dcf3;
+  text-align: center;
+  color: black;
 }
 
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-temperature {
+  font-size: 13px;
+}
 ul {
   list-style-type: none;
   margin: 10px;
