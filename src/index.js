@@ -82,17 +82,19 @@ function search(event) {
   let cityInput = document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
 }
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  celsiusTemperature = Math.round(response.data.main.temp);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   temperatureElement.innerHTML = celsiusTemperature;
 }
 
